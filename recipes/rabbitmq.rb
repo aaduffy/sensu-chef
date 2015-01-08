@@ -29,7 +29,7 @@ if node.sensu.use_ssl
     recursive true
   end
 
-  ssl = Sensu::Helpers.data_bag_item("ssl")
+  ssl = Sensu::Helpers.data_bag_item(node, "ssl")
 
   %w[
     cacert
@@ -57,7 +57,7 @@ end
 
 rabbitmq = node.sensu.rabbitmq.to_hash
 
-config = Sensu::Helpers.data_bag_item("config", true)
+config = Sensu::Helpers.data_bag_item(node, "config", true)
 
 if config && config["rabbitmq"].is_a?(Hash)
   rabbitmq = Chef::Mixin::DeepMerge.merge(rabbitmq, config["rabbitmq"])
