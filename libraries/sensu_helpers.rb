@@ -36,7 +36,7 @@ module Sensu
       end
 
       def data_bag_item(node, item, missing_ok=false)
-        if node.sensu.data_bag_items.key?(items)
+        if node.sensu.data_bag_items.key?(item)
           raw_hash = node['sensu']['data_bag_items'][item] 
         else
           raw_hash = Chef::DataBagItem.load("sensu", item)
