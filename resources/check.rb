@@ -7,6 +7,7 @@ attribute :subscribers, :kind_of => Array
 attribute :standalone, :kind_of => [TrueClass, FalseClass]
 attribute :aggregate, :kind_of => [TrueClass, FalseClass]
 attribute :interval, :default => 60
+attribute :occurrences, :kind_of => Integer, :default => 1
 attribute :handle, :kind_of => [TrueClass, FalseClass]
 attribute :handlers, :kind_of => Array
 attribute :publish, :kind_of => [TrueClass, FalseClass]
